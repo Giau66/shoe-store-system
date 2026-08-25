@@ -1,0 +1,17 @@
+# ====================================================================
+# SHOES STORE - CLEAN APACHE CONFIGURATION (.htaccess)
+# ====================================================================
+
+DirectoryIndex index.php index.html
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Tự động chuyển hướng sang HTTPS trên Hosting (Bảo mật SSL)
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP_HOST} !^localhost
+    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>

@@ -1,0 +1,27 @@
+:root{--sidebar-width:260px!important;--bg-dark-slate:#1a1d21!important;--active-sage:#c5a059!important;--bg-light:#fcfbf7!important;--admin-cyan:#00d4ff;--admin-pink:#ff4fa3;--admin-border:rgba(36,55,92,.12)}
+html{scroll-behavior:smooth}body{background:radial-gradient(circle at 100% 0,rgba(0,212,255,.08),transparent 26%),radial-gradient(circle at 25% 0,rgba(108,92,231,.08),transparent 28%),#fcfbf7!important;color:#182239}
+.flex-grow-1.p-4{padding:28px!important}.card{border:1px solid var(--admin-border)!important;border-radius:20px!important;box-shadow:0 12px 35px rgba(20,35,70,.07)!important;background:rgba(255,255,255,.95)!important}.card:hover{box-shadow:0 20px 48px rgba(20,35,70,.11)!important}
+.card-header{background:transparent!important;border-bottom:1px solid var(--admin-border)!important;padding:1.15rem 1.3rem}.card-body{padding:1.3rem}
+.btn{border-radius:12px!important;font-weight:650;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}.btn-primary,.btn-warning{border:0!important;color:#fff!important;background:linear-gradient(135deg,#6c5ce7,#6577f4)!important;box-shadow:0 9px 22px rgba(108,92,231,.22)}
+.form-control,.form-select{border-radius:12px!important;border:1px solid var(--admin-border)!important;min-height:42px;background:#fbfcff}.form-control:focus,.form-select:focus{border-color:rgba(108,92,231,.5)!important;box-shadow:0 0 0 4px rgba(108,92,231,.1)!important}
+.table-responsive{border-radius:15px}.table thead th{background:#f2f5fa!important;color:#647087;text-transform:uppercase;font-size:.75rem;letter-spacing:.04em;border:0}.table tbody td{vertical-align:middle}.table tbody tr{transition:.2s}.table tbody tr:hover{background:rgba(108,92,231,.045)}
+.badge{border-radius:999px;padding:.5em .75em}.modal-content{border:1px solid rgba(108,92,231,.14);border-radius:22px;box-shadow:0 28px 80px rgba(8,16,38,.28)}
+.ui-ripple{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.48);transform:scale(0);animation:adminRipple .6s ease-out}.ui-touch{transform:scale(.97)!important}.admin-reveal{animation:adminReveal .48s both}
+@keyframes adminRipple{to{transform:scale(4);opacity:0}}@keyframes adminReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:768px){.flex-grow-1.p-4{padding:76px 14px 20px!important}.admin-sidebar{width:min(286px,86vw)!important}.card{border-radius:16px!important}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Compact Fit-On-One-Screen Table & UI Utilities */
+.table-compact th, .table-compact td {
+    padding: 0.5rem 0.6rem !important;
+    font-size: 0.86rem !important;
+}
+.table-compact .btn-sm {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.8rem !important;
+}
+.table-compact .badge {
+    font-size: 0.75rem !important;
+    padding: 0.35em 0.65em !important;
+}
+

@@ -1,0 +1,3 @@
+<?php $page_title='Câu hỏi thường gặp'; require_once __DIR__.'/includes/header.php'; ?>
+<div class="container my-5"><div class="card border-0 shadow-sm rounded-4 p-4"><h1 class="h3 fw-bold">Câu hỏi thường gặp</h1><p class="mb-0">Các câu hỏi về tài khoản, thanh toán, vận chuyển và đổi trả được hỗ trợ qua kênh liên hệ của cửa hàng.</p></div></div>
+<?php require_once __DIR__.'/includes/footer.php'; ?>

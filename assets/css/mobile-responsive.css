@@ -1,0 +1,273 @@
+/* ==========================================================================
+   SHOES STORE - MOBILE FIRST & RESPONSIVE UX STYLESHEET
+   Fixes oversized typography, missing mobile navigation, and layout overflow.
+   ========================================================================== */
+
+/* ── 1. GLOBAL MOBILE RESETS & FLUID TYPOGRAPHY ─────────────────────────── */
+@media (max-width: 767.98px) {
+    html, body {
+        overflow-x: hidden !important;
+        font-size: 14px !important;
+    }
+
+    /* Tiêu đề vừa vặn trên điện thoại, không bị to quá cỡ */
+    h1, .h1 { font-size: 1.5rem !important; line-height: 1.25 !important; }
+    h2, .h2 { font-size: 1.3rem !important; line-height: 1.3 !important; }
+    h3, .h3 { font-size: 1.15rem !important; line-height: 1.3 !important; }
+    h4, .h4 { font-size: 1.05rem !important; }
+    h5, .h5 { font-size: 0.95rem !important; }
+
+    .container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    /* ── HEADER & SEARCH TỐI ƯU MOBILE ── */
+    .top-header {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+    .brand-logo-text {
+        font-size: 1.25rem !important;
+        letter-spacing: -0.5px !important;
+    }
+    .header-action-btn {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.95rem !important;
+    }
+    .search-input {
+        font-size: 0.85rem !important;
+        padding-top: 7px !important;
+        padding-bottom: 7px !important;
+        height: 38px !important;
+    }
+
+    /* ── HERO BANNER & SLIDER MOBILE ── */
+    .hero-banner, .carousel-item {
+        min-height: 180px !important;
+    }
+    .hero-title {
+        font-size: 1.35rem !important;
+    }
+    .hero-subtitle {
+        font-size: 0.85rem !important;
+    }
+
+    /* ── LƯỚI SẢN PHẨM 2 CỘT CHUẨN ĐIỆN THOẠI ── */
+    .product-card {
+        border-radius: 12px !important;
+        margin-bottom: 10px !important;
+    }
+    .product-image-wrap {
+        height: 160px !important;
+    }
+    .product-info {
+        padding: 10px !important;
+    }
+    .product-title {
+        font-size: 0.82rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 4px !important;
+        height: 2.2em !important;
+    }
+    .product-price {
+        font-size: 0.98rem !important;
+    }
+    .old-price {
+        font-size: 0.75rem !important;
+    }
+    .badge-discount, .badge-hot {
+        font-size: 0.65rem !important;
+        padding: 2px 6px !important;
+    }
+
+    /* ── PRODUCT DETAIL MOBILE ── */
+    .product-img-main {
+        max-height: 280px !important;
+        object-fit: contain !important;
+    }
+    .thumb-img {
+        height: 48px !important;
+    }
+    .size-selector {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+    .size-label {
+        min-width: 44px !important;
+        height: 38px !important;
+        font-size: 0.85rem !important;
+        padding: 4px 8px !important;
+    }
+    .btn-add-cart, .btn-buy-now {
+        font-size: 0.88rem !important;
+        padding: 10px 14px !important;
+    }
+
+    /* ── CART & CHECKOUT MOBILE ── */
+    .cart-table-wrap table {
+        font-size: 0.85rem !important;
+    }
+    .cart-img-thumb {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    /* ── ADMIN TABLES RESPONSIVE SCROLL ── */
+    .admin-wrapper .table-responsive {
+        border-radius: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .admin-wrapper .card {
+        padding: 12px !important;
+    }
+    .admin-wrapper h1, .admin-wrapper h2, .admin-wrapper h3 {
+        font-size: 1.25rem !important;
+    }
+
+    /* ── CHATBOT & FLOATING BUTTONS ADJUSTMENT ── */
+    #aiChatTrigger, .ai-chat-bubble-btn {
+        bottom: 72px !important; /* Không che thanh Bottom Nav */
+        right: 14px !important;
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 1.15rem !important;
+    }
+    #aiChatModal {
+        bottom: 76px !important;
+        right: 8px !important;
+        left: 8px !important;
+        width: auto !important;
+        max-height: 72vh !important;
+    }
+
+    /* Khoảng đệm dưới cùng trang để không bị thanh Bottom Nav che nội dung */
+    body {
+        padding-bottom: 68px !important;
+    }
+}
+
+/* ── 2. MOBILE BOTTOM NAVIGATION BAR (THANH ĐIỀU HƯỚNG DƯỚI ĐÁY) ────────── */
+.mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+    padding: 0 4px;
+}
+
+[data-theme="dark"] .mobile-bottom-nav {
+    background: rgba(18, 20, 32, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.mobile-bottom-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #64748b;
+    font-size: 10.5px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    position: relative;
+    padding: 6px 0;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] .mobile-bottom-nav-item {
+    color: #94a3b8;
+}
+
+.mobile-bottom-nav-item i {
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+    transition: transform 0.2s ease;
+}
+
+.mobile-bottom-nav-item.active, 
+.mobile-bottom-nav-item:hover {
+    color: #dc2626;
+}
+
+[data-theme="dark"] .mobile-bottom-nav-item.active,
+[data-theme="dark"] .mobile-bottom-nav-item:hover {
+    color: #f87171;
+}
+
+.mobile-bottom-nav-item.active i {
+    transform: translateY(-2px);
+}
+
+.mobile-nav-badge {
+    position: absolute;
+    top: 3px;
+    right: calc(50% - 16px);
+    background: #dc2626;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 10px;
+    line-height: 1.2;
+}
+
+/* ── 3. OFFCANVAS MOBILE DRAWER MENU ────────────────────────────────────── */
+.mobile-drawer {
+    width: 290px !important;
+}
+
+.mobile-drawer-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 16px;
+}
+
+.mobile-drawer-link {
+    display: flex;
+    align-items: center;
+    padding: 11px 14px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .mobile-drawer-link {
+    color: #cbd5e1;
+}
+
+.mobile-drawer-link:hover, .mobile-drawer-link.active {
+    background: rgba(220, 38, 38, 0.08);
+    color: #dc2626;
+}
+
+[data-theme="dark"] .mobile-drawer-link:hover, [data-theme="dark"] .mobile-drawer-link.active {
+    background: rgba(248, 113, 113, 0.12);
+    color: #f87171;
+}
+
+.mobile-drawer-link i {
+    width: 26px;
+    text-align: center;
+    margin-right: 8px;
+    font-size: 1rem;
+}

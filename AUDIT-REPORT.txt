@@ -1,0 +1,98 @@
+BÁO CÁO KIỂM TRA MÃ NGUỒN SHOES STORE
+================================================
+
+[OK PHP] about.php
+[OK PHP] admin/banners.php
+[OK PHP] admin/categories-brands.php
+[OK PHP] admin/cms-homepage.php
+[OK PHP] admin/customers.php
+[OK PHP] admin/employees.php
+[OK PHP] admin/includes/header.php
+[OK PHP] admin/includes/size-calculator-modal.php
+[OK PHP] admin/index.php
+[OK PHP] admin/inventory.php
+[OK PHP] admin/menu-manager.php
+[OK PHP] admin/order-detail.php
+[OK PHP] admin/orders.php
+[OK PHP] admin/print-invoice.php
+[OK PHP] admin/product-add.php
+[OK PHP] admin/product-edit.php
+[OK PHP] admin/product-form.php
+[OK PHP] admin/products.php
+[OK PHP] admin/profit-report.php
+[OK PHP] admin/site-settings.php
+[OK PHP] admin/statistics.php
+[OK PHP] admin/users-commission.php
+[OK PHP] admin/users.php
+[OK PHP] admin/vouchers.php
+[OK PHP] all-products.php
+[OK PHP] api/address-crud.php
+[OK PHP] api/ai-chat.php
+[OK PHP] api/comment-add.php
+[OK PHP] api/search-live.php
+[OK PHP] api/wishlist-toggle.php
+[OK PHP] cart-process.php
+[OK PHP] cart.php
+[OK PHP] change-password.php
+[OK PHP] checkout-process.php
+[OK PHP] checkout-qr.php
+[OK PHP] checkout.php
+[OK PHP] config/PHPMailer/DSNConfigurator.php
+[OK PHP] config/PHPMailer/Exception.php
+[OK PHP] config/PHPMailer/OAuth.php
+[OK PHP] config/PHPMailer/OAuthTokenProvider.php
+[OK PHP] config/PHPMailer/PHPMailer.php
+[OK PHP] config/PHPMailer/POP3.php
+[OK PHP] config/PHPMailer/SMTP.php
+[OK PHP] config/db.php
+[OK PHP] config/google-config.php
+[OK PHP] config/local-config.example.php
+[OK PHP] config/otp-helper.php
+[OK PHP] contact.php
+[OK PHP] faq.php
+[OK PHP] google-callback.php
+[OK PHP] google-complete-profile.php
+[OK PHP] includes/ai-chat.php
+[OK PHP] includes/footer.php
+[OK PHP] includes/header.php
+[OK PHP] includes/order-timeline.php
+[OK PHP] includes/product-card.php
+[OK PHP] index.php
+[OK PHP] login-otp.php
+[OK PHP] login-process.php
+[OK PHP] login.php
+[OK PHP] logout.php
+[OK PHP] my-orders.php
+[OK PHP] order-success.php
+[OK PHP] otp-verify.php
+[OK PHP] payment-qr.php
+[OK PHP] privacy.php
+[OK PHP] product-detail.php
+[OK PHP] profile.php
+[OK PHP] register.php
+[OK PHP] return-policy.php
+[OK PHP] shipping-policy.php
+[OK PHP] size-guide.php
+[OK PHP] terms.php
+[OK PHP] tools/audit.php
+[OK PHP] wishlist.php
+[OK JS ] assets/js/admin-modern.js
+[OK JS ] assets/js/premium-ui.js
+[OK JS ] assets/js/script.js
+
+CÁC LỖI CHỨC NĂNG ĐÃ SỬA
+- Đồng bộ checkout-process.php với checkout.php, không còn xử lý hai luồng giỏ hàng khác nhau.
+- Giỏ hàng và thanh toán dùng cart_items/variant_id đúng khóa ngoại.
+- Đăng nhập mật khẩu dùng prepared statement và tái tạo session ID.
+- OTP đăng nhập chỉ áp dụng cho tài khoản tồn tại, không tự tạo user sai email/phone.
+- Google OAuth tự nhận callback theo thư mục dự án và báo rõ khi chưa cấu hình.
+- Xóa Client Secret và Gemini API key khỏi mã nguồn; chuyển sang local-config/env.
+- Voucher khách hàng mới không còn bị ghi nhận là đã sử dụng ngay khi đăng ký.
+- Hủy đơn hoàn tồn kho đúng một lần; phục hồi đơn kiểm tra và trừ lại tồn kho.
+- Bổ sung các trang chính sách còn thiếu và ảnh mặc định để tránh lỗi 404.
+- Bổ sung tools/audit.php và hướng dẫn cấu hình XAMPP.
+
+GIỚI HẠN KIỂM TRA
+- Môi trường kiểm tra hiện tại không có extension mysqli/curl/mbstring nên không thể kết nối MySQL hoặc gọi Google/Gemini thật.
+- Google OAuth chỉ hoạt động khi Client ID, Client Secret và Authorized redirect URI được cấu hình đúng trên Google Cloud.
+- Cần chạy tools/audit.php trên chính XAMPP của máy triển khai để xác nhận extension và quyền ghi uploads.
